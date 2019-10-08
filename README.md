@@ -1,3 +1,3 @@
 # AlgoCasts
 
-Companion repo to a course on Udemy.com
+My solutions to this companion repo from a course on Udemy.com
