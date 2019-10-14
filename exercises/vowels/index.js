@@ -8,14 +8,34 @@
 //   vowels('Why?') --> 0
 
 function vowels(str) {
-    let vowelStr = "aeiou";
-    let count = 0;
-    str.toLowerCase()
-        .split("")
-        .map(item => {
-            if (vowelStr.indexOf(item) >= 0) count++;
-        });
-    return count;
+    const matches = str.match(/[aeiou]/gi);
+    return matches ? matches.length : 0;
 }
 
 module.exports = vowels;
+
+// function vowels(str) {
+//     let vowelStr = "aeiou";
+//     let count = 0;
+//     str.toLowerCase()
+//         .split("")
+//         .map(item => {
+//             if (vowelStr.indexOf(item) >= 0) count++;
+//         });
+//     return count;
+// }
+
+// function vowels(str) {
+//     const matches = str.match(/[aeiou]/gi);
+//     return matches ? matches.length : 0;
+// }
+
+// function vowels(str) {
+//     let count = 0;
+//     // best to use an array because we can look for larger matches like "abc", but this problem is not concerned with that
+//     const checker = ["a", "e", "i", "o", "u"];
+//     for (let char of str.toLowerCase()) {
+//         if (checker.includes(char)) count++;
+//     }
+//     return count;
+// }
