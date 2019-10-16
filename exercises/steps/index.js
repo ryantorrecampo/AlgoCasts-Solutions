@@ -18,11 +18,10 @@
 //       '####'
 
 function steps(n, row = 0, stair = "") {
-    // stair.length === col
     if (n === row) return;
     if (n === stair.length) {
         console.log(stair);
-        return steps(n, row + 1); //not including a third parameter will default to empty string
+        return steps(n, row + 1);
     }
     const add = stair.length <= row ? "#" : " ";
     steps(n, row, stair + add);

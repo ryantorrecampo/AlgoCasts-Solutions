@@ -9,8 +9,29 @@
 //   fib(4) === 3
 
 function fib(n) {
-    if (n < 2) return n;
-    return fib(n - 1) + fib(n - 2);
+    let cache = {};
+    return function fibMemoized(n) {
+        if (n in cache) {
+            return cache[n];
+        } else {
+            if (n < 2) return n;
+            else {
+                cache[n] = fibMemoized(n - 1) + fibMemoized(n - 2);
+                return cache[n];
+            }
+        }
+    };
 }
 
-module.exports = fib;
+// const memoized = fib();
+// console.log(memoized(10));
+
+module.exports = fib();
+
+function fib(n) {
+    let ans = [0, 1];
+    for (let i = 2; i <= n; i++) {
+        ans.push(ans[i - 1] + ans[i - 2]);
+    }
+    return ans[n];
+}
