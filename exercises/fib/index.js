@@ -10,10 +10,9 @@
 
 function fib(n) {
     let cache = {};
-    return function fibMemoized(n) {
-        if (n in cache) {
-            return cache[n];
-        } else {
+    return function fibMemoized() {
+        if (n in cache) return cache[n];
+        else {
             if (n < 2) return n;
             else {
                 cache[n] = fibMemoized(n - 1) + fibMemoized(n - 2);
