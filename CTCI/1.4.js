@@ -5,17 +5,19 @@
 
 const palindromePerm = str => {
     const map = {};
+    let countOdd = 0;
     str.replace(/[ ]/g, "")
         .split("")
         .forEach(item => {
             map[item] = map[item] + 1 || 1;
+            map[item] % 2 == 1 ? countOdd++ : countOdd--;
         });
 
-    let justOne = 0;
-    Object.keys(map).forEach(item => {
-        if (map[item] % 2 === 1) justOne++;
-    });
-    return justOne < 2;
+    // let justOne = 0;
+    // Object.keys(map).forEach(item => {
+    //     if (map[item] % 2 === 1) justOne++;
+    // });
+    return countOdd < 2;
 };
 
 console.log(palindromePerm("tact coa"));
