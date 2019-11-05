@@ -1,3 +1,12 @@
+// const twoSumBrute = (nums, target) => {
+//     for (let i = 0; i < nums.length; i++) {
+//         for (let j = 0; j < nums.length; j++) {
+//             if (nums[j] === target - nums[i] && i !== j) return [i, j]; // Can't use the same element twice.
+//         }
+//     }
+//     return null;
+// };
+
 const twoSum = (nums, target) => {
     const map = {};
     for (let i = 0; i < nums.length; i++) {
@@ -7,15 +16,6 @@ const twoSum = (nums, target) => {
     }
     return null;
 };
-
-// const twoSumBrute = (nums, target) => {
-//     for (let i = 0; i < nums.length; i++) {
-//         for (let j = 0; j < nums.length; j++) {
-//             if (nums[j] === target - nums[i] && i !== j) return [i, j]; // Can't use the same element twice.
-//         }
-//     }
-//     return null;
-// };
 
 // space complexity = O(n) because of the hash table (map)
 // time complexity = O(n) because we iterate through each element of the array once.

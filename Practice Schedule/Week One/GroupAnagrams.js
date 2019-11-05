@@ -5,8 +5,7 @@ const groupAnagrams = strs => {
             .split("")
             .sort()
             .join();
-        if (map[sort]) map[sort].push(strs[i]);
-        else map[sort] = [strs[i]];
+        map[sort] ? map[sort].push(strs[i]) : (map[sort] = [strs[i]]);
     }
     return Object.values(map);
 };
